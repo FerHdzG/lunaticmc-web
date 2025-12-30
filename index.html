@@ -62,7 +62,7 @@ body{
   inset:0;
 }
 
-/* TEXT */
+/* HERO TEXT */
 .hero h1{
   font-size:4.2rem;
   font-weight:800;
@@ -142,8 +142,8 @@ body{
   box-shadow:0 0 35px rgba(196,0,0,.35);
 }
 
-/* DISCORD */
-.discord-btn{
+/* BUTTONS */
+.btn-main{
   margin-top:30px;
   display:inline-block;
   padding:18px 44px;
@@ -153,7 +153,7 @@ body{
   text-decoration:none;
   transition:.3s;
 }
-.discord-btn:hover{
+.btn-main:hover{
   background:var(--red);
   box-shadow:0 0 30px rgba(196,0,0,.6);
 }
@@ -177,7 +177,8 @@ footer{
 <!-- HERO -->
 <section class="hero">
   <video autoplay muted loop playsinline>
-    <source src="VIDEO_URL.mp4" type="video/mp4">
+    <!-- VIDEO HERO -->
+    <source src="video/hero.mp4" type="video/mp4">
   </video>
 
   <div id="particles"></div>
@@ -230,13 +231,24 @@ footer{
   </div>
 </section>
 
+<!-- TIENDA -->
+<section class="section fade" style="text-align:center">
+  <h2>Tienda</h2>
+  <p style="opacity:.7;margin-top:10px">
+    Apoya al servidor y obtén ventajas exclusivas
+  </p>
+  <a class="btn-main" href="https://lunaticmc.tebex.io" target="_blank">
+    Ir a la tienda
+  </a>
+</section>
+
 <!-- DISCORD -->
 <section class="section fade" style="text-align:center">
   <h2>Únete a la comunidad</h2>
   <p style="opacity:.7;margin-top:10px">
     Anuncios, eventos y soporte
   </p>
-  <a class="discord-btn" href="https://discord.gg/TU_INVITE" target="_blank">
+  <a class="btn-main" href="https://discord.gg/TU_INVITE" target="_blank">
     Entrar al Discord
   </a>
 </section>
