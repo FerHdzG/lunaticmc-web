@@ -1,109 +1,143 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>LunaticMC - Servidor Minecraft</title>
-  <meta name="description" content="Vive la mejor experiencia Minecraft en LunaticMC" />
-  <link rel="icon" type="image/png" href="assets/image/favicon.png" />
-  
-  <!-- Open Graph Meta -->
-  <meta property="og:title" content="LunaticMC - Servidor Minecraft" />
-  <meta property="og:description" content="Únete a nuestro servidor y disfruta de survival, minijuegos y eventos!" />
-  <meta property="og:image" content="assets/image/256x256lunaticmc.png" />
-  <meta property="og:url" content="http://lunaticmc.net" />
-  <meta property="og:type" content="website" />
-  
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="LunaticMC - Servidor Minecraft" />
-  <meta name="twitter:description" content="Únete a nuestro servidor y disfruta de survival, minijuegos y eventos!" />
-  <meta name="twitter:image" content="assets/image/256x256lunaticmc.png" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LunaticMC - Servidor de Minecraft</title>
+  <meta name="description" content="Únete a LunaticMC, el servidor de Minecraft más emocionante de México.">
+  <link rel="icon" type="image/png" href="assets/image/favicon.png">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="LunaticMC - Minecraft Server">
+  <meta property="og:description" content="Explora, construye y compite en LunaticMC.">
+  <meta property="og:image" content="assets/image/256x256lunaticmc.png">
+  <meta property="og:url" content="https://lunaticmc.net">
+  <meta property="og:type" content="website">
 
   <!-- CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-  <link rel="stylesheet" href="assets/css/style.css" />
-
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  
   <style>
-    /* Colores rojos y fondo */
     body {
-      background: url('assets/image/background.png') no-repeat center center fixed;
+      font-family: 'Arial', sans-serif;
+      background: #1a0a0a url('assets/image/background.png') no-repeat center center fixed;
       background-size: cover;
       color: #fff;
     }
-    .btn-primary { background-color: #8B0000; border-color: #8B0000; }
-    .navbar-dark .navbar-nav .nav-link { color: #fff; }
-    .section { padding: 80px 0; }
-    .card, .privacy-card, .info-card, .hero-card { background-color: rgba(139,0,0,0.8); color: #fff; }
-    .accordion-button { background-color: rgba(139,0,0,0.8); color: #fff; }
-    .accordion-button:not(.collapsed) { background-color: #700000; color: #fff; }
-    .ip-box { background-color: #700000; padding: 10px; font-weight: bold; display: inline-block; border-radius: 5px; margin-top: 10px; }
+    .btn-primary {
+      background-color: #8B0000;
+      border: none;
+    }
+    .hero {
+      height: 100vh;
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .hero iframe {
+      position: absolute;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+      pointer-events:none;
+      z-index:0;
+    }
+    .hero-overlay {
+      position:absolute;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+      background: rgba(139,0,0,0.6);
+      z-index:1;
+    }
+    .hero-content {
+      position: relative;
+      z-index:2;
+    }
+    .ip-box {
+      margin-top:10px;
+      font-weight:bold;
+      font-size:1.2rem;
+      background: rgba(0,0,0,0.5);
+      display:inline-block;
+      padding:5px 10px;
+      border-radius:5px;
+    }
+    section {
+      padding:60px 0;
+    }
+    .card {
+      background: rgba(30,0,0,0.7);
+      border:none;
+    }
+    .testimonial-card {
+      background: rgba(30,0,0,0.7);
+      padding:20px;
+      border-radius:10px;
+      margin-bottom:20px;
+    }
   </style>
 </head>
 <body>
-
-<!-- Navbar -->
-<header class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #700000;">
-  <div class="container">
-    <a class="navbar-brand" href="#hero">
-      <img src="assets/image/256x256lunaticmc.png" alt="Logo" width="50">
-      LunaticMC
-    </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="mainNav">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="#rules">Reglas</a></li>
-        <li class="nav-item"><a class="nav-link" href="#tos">ToS</a></li>
-        <li class="nav-item"><a class="nav-link" href="#imprint">Información</a></li>
-        <li class="nav-item"><a class="nav-link" href="#privacy">Privacidad</a></li>
-        <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
-      </ul>
-    </div>
-  </div>
-</header>
-
-<!-- Hero -->
-<section id="hero" class="hero d-flex align-items-center" style="height:100vh;">
-  <div class="video-background">
-    <iframe id="bgVideo" title="LunaticMC Video" src="https://www.youtube.com/embed/h8UpC5JbMU0?autoplay=1&mute=1&loop=1&playlist=h8UpC5JbMU0&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1&start=60&enablejsapi=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-  </div>
-  <div class="container text-center">
-    <img src="assets/image/256x256lunaticmc.png" alt="Logo" width="150">
-    <h1 class="display-4 mt-3">¡Bienvenido a LunaticMC!</h1>
-    <p>Explora, construye y compite en nuestro servidor de Minecraft</p>
-    <a class="btn btn-primary btn-lg mt-2" href="#social">¡Conectarse!</a>
-    <div class="ip-box">play.lunaticmc.net</div>
-  </div>
-</section>
-
-<main>
-  <!-- Reglas -->
-  <section id="rules" class="section">
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
-      <div class="section-title text-center mb-5">
-        <h2>Reglas del Servidor</h2>
-        <p>Para una experiencia justa y divertida</p>
+      <a class="navbar-brand" href="#hero"><img src="assets/image/256x256lunaticmc.png" alt="Logo" width="50"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#rules">Reglas</a></li>
+          <li class="nav-item"><a class="nav-link" href="#tos">ToS</a></li>
+          <li class="nav-item"><a class="nav-link" href="#testimonios">Testimonios</a></li>
+          <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
+        </ul>
       </div>
-      <div class="row g-4">
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section id="hero" class="hero">
+    <iframe src="https://www.youtube.com/embed/h8UpC5JbMU0?autoplay=1&mute=1&loop=1&playlist=h8UpC5JbMU0&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1&start=60" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <img src="assets/image/256x256lunaticmc.png" alt="Logo" width="150">
+      <h1 class="mt-3">¡Bienvenido a LunaticMC!</h1>
+      <p>Explora, construye y compite en nuestro servidor de Minecraft</p>
+      <a class="btn btn-primary btn-lg mt-2" href="#social">¡Conectarse!</a>
+      <div class="ip-box">play.lunaticmc.net</div>
+    </div>
+  </section>
+
+  <!-- Reglas -->
+  <section id="rules">
+    <div class="container">
+      <h2 class="text-center mb-5">Reglas del Servidor</h2>
+      <div class="row">
         <div class="col-md-4">
-          <div class="card p-3 shadow">
-            <h4>Juego Justo</h4>
-            <p>No se permite hackeo, x-ray, macros o exploits. Las infracciones se investigarán.</p>
+          <div class="card p-3">
+            <h5>Juego Justo</h5>
+            <p>No se permite hack, x-ray, dupes ni ventajas injustas.</p>
           </div>
         </div>
         <div class="col-md-4">
-          <div class="card p-3 shadow">
-            <h4>Respeto</h4>
-            <p>Prohibido insultar, discriminar o comportarse de forma tóxica. Se aplican sanciones.</p>
+          <div class="card p-3">
+            <h5>Respeto a la Comunidad</h5>
+            <p>Evita insultos, discriminación o conducta tóxica.</p>
           </div>
         </div>
         <div class="col-md-4">
-          <div class="card p-3 shadow">
-            <h4>Economía Equilibrada</h4>
-            <p>No manipular el mercado ni duplicar items. Las cuentas sancionadas serán reseteadas.</p>
+          <div class="card p-3">
+            <h5>Economía Equilibrada</h5>
+            <p>Manipulación del mercado o exploits serán sancionados.</p>
           </div>
         </div>
       </div>
@@ -111,32 +145,29 @@
   </section>
 
   <!-- Testimonios -->
-  <section id="testimonials" class="section bg-dark">
+  <section id="testimonios" style="background: rgba(0,0,0,0.6);">
     <div class="container">
-      <div class="section-title text-center mb-5">
-        <h2>Testimonios</h2>
-        <p>Lo que nuestros jugadores dicen</p>
-      </div>
-      <div class="row g-4">
+      <h2 class="text-center mb-5">Testimonios</h2>
+      <div class="row">
         <div class="col-md-4">
-          <div class="card p-3 shadow">
-            <p>"El mejor servidor en el que he jugado. Comunidad increíble."</p>
-            <h5>- Juan Pérez</h5>
-            <div>⭐⭐⭐⭐⭐</div>
+          <div class="testimonial-card">
+            <h5>Ana López</h5>
+            <p>“El servidor es increíble, la comunidad es muy amigable y los eventos son geniales.”</p>
+            <p>⭐⭐⭐⭐⭐</p>
           </div>
         </div>
         <div class="col-md-4">
-          <div class="card p-3 shadow">
-            <p>"Eventos constantes y un staff muy atento. ¡Recomendado!"</p>
-            <h5>- Ana López</h5>
-            <div>⭐⭐⭐⭐⭐</div>
+          <div class="testimonial-card">
+            <h5>Carlos Pérez</h5>
+            <p>“Muy buen rendimiento y los plugins hacen la experiencia única.”</p>
+            <p>⭐⭐⭐⭐⭐</p>
           </div>
         </div>
         <div class="col-md-4">
-          <div class="card p-3 shadow">
-            <p>"Survival increíble y sin lag. ¡Me encanta!"</p>
-            <h5>- Carlos Martínez</h5>
-            <div>⭐⭐⭐⭐⭐</div>
+          <div class="testimonial-card">
+            <h5>Mariana Ruiz</h5>
+            <p>“Me encanta el server, todo está muy bien organizado.”</p>
+            <p>⭐⭐⭐⭐⭐</p>
           </div>
         </div>
       </div>
@@ -144,34 +175,59 @@
   </section>
 
   <!-- ToS -->
-  <section id="tos" class="section">
+  <section id="tos">
     <div class="container">
-      <div class="section-title text-center mb-5">
-        <h2>Términos de Servicio (ToS)</h2>
-        <p>Al usar el servidor aceptas estas condiciones</p>
-      </div>
+      <h2 class="text-center mb-5">Términos de Servicio</h2>
       <ul>
-        <li>El servidor y servicios son responsabilidad de LunaticMC.</li>
-        <li>Tu cuenta es personal, mantén tu contraseña segura.</li>
-        <li>Compras en tienda digital no tienen reembolso fuera de normativa.</li>
-        <li>Las infracciones pueden causar advertencias o bans.</li>
+        <li>Uso responsable del servidor y sus recursos.</li>
+        <li>Protección de cuentas y datos personales.</li>
+        <li>Respetar reglas de economía y juego justo.</li>
+        <li>Incumplimientos pueden derivar en sanciones.</li>
       </ul>
     </div>
   </section>
-</main>
 
-<!-- Footer -->
-<footer class="section bg-dark text-light">
-  <div class="container text-center">
-    <img src="assets/image/256x256lunaticmc.png" width="80" alt="Logo">
-    <h4>LunaticMC</h4>
-    <p>© 2025 LunaticMC. Todos los derechos reservados.</p>
-    <p>IP: play.lunaticmc.net</p>
-  </div>
-</footer>
+  <!-- FAQ -->
+  <section id="faq" style="background: rgba(30,0,0,0.6);">
+    <div class="container">
+      <h2 class="text-center mb-5">Preguntas Frecuentes</h2>
+      <div class="accordion" id="faqAccordion">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="faqOne">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapseOne">
+              ¿Qué versión del servidor se usa?
+            </button>
+          </h2>
+          <div id="faqCollapseOne" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              El servidor corre sobre Paper 1.21.x con plugins personalizados.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="faqTwo">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapseTwo">
+              ¿Puedo conectarme con cuenta no premium?
+            </button>
+          </h2>
+          <div id="faqCollapseTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Sí, LunaticMC permite cuentas premium y no premium de manera segura.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="assets/js/i18n.js"></script>
-<script src="assets/js/main.js"></script>
+  <!-- Footer -->
+  <footer class="bg-dark text-white p-4">
+    <div class="container text-center">
+      <p>© 2025 LunaticMC. Todos los derechos reservados.</p>
+      <p>IP del servidor: play.lunaticmc.net</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
