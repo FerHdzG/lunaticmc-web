@@ -24,126 +24,135 @@ body{
   font-family:'Inter',sans-serif;
   background:var(--bg);
   color:var(--text);
+  overflow-x:hidden;
 }
 
-/* DECORACIONES SUPERIORES */
-.decor{
-  position:absolute;
-  width:420px;
-  height:420px;
-  background:radial-gradient(circle at top left,#5b7cff55,transparent 70%);
-  border-radius:50%;
-  top:-120px;
-  z-index:0;
-}
-.decor.right{
-  right:-140px;
-}
-.decor.left{
-  left:-140px;
-}
-
-/* HEADER */
+/* ================= HEADER ================= */
 header{
-  position:relative;
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  z-index:20;
+  backdrop-filter: blur(12px);
+  background:rgba(15,17,21,.65);
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
+.header-inner{
   max-width:1200px;
   margin:auto;
-  padding:30px 20px;
+  padding:16px 20px;
   display:flex;
   justify-content:space-between;
   align-items:center;
-  z-index:2;
 }
+
 .logo{
   display:flex;
   align-items:center;
   gap:12px;
   font-weight:700;
 }
-.logo img{
-  width:40px;
-}
+.logo img{width:36px}
+
 nav{
   display:flex;
-  gap:30px;
+  gap:20px;
 }
 nav a{
-  color:#fff;
-  text-decoration:none;
-  font-weight:600;
   padding:10px 18px;
   border-radius:999px;
-  background:rgba(255,255,255,0.08);
-  backdrop-filter:blur(6px);
+  text-decoration:none;
+  font-weight:600;
+  color:#fff;
+  background:rgba(255,255,255,.08);
 }
 nav a:hover{
-  background:rgba(255,255,255,0.18);
+  background:rgba(255,255,255,.18);
 }
 
-/* HERO */
+/* ================= HERO ================= */
 .hero{
   position:relative;
   min-height:100vh;
-  background:
-    linear-gradient(to bottom, rgba(15,17,21,0.35), var(--bg)),
-    url("assets/img/hero.png") center/cover no-repeat;
+  background:url("img/hero.png") center/cover no-repeat;
   display:flex;
   align-items:center;
 }
-.hero-content{
-  max-width:1200px;
-  margin:auto;
-  padding:120px 20px 160px;
-  display:grid;
-  grid-template-columns:1fr;
-  z-index:2;
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+    to bottom,
+    rgba(15,17,21,.35),
+    rgba(15,17,21,.85) 70%,
+    var(--bg)
+  );
 }
+
+.hero-content{
+  position:relative;
+  z-index:2;
+  max-width:1200px;
+  padding:160px 20px 120px;
+  margin:auto;
+}
+
 .hero h1{
-  font-size:3.6rem;
-  max-width:700px;
+  font-size:3.2rem;
   line-height:1.1;
 }
 .hero p{
   margin-top:20px;
-  color:#d0d3dd;
-  font-size:1.2rem;
-  max-width:600px;
+  color:var(--muted);
+  font-size:1.1rem;
+  max-width:520px;
 }
+
 .hero-buttons{
   margin-top:30px;
   display:flex;
-  gap:20px;
+  gap:16px;
+  flex-wrap:wrap;
 }
 .btn{
-  padding:16px 34px;
+  padding:14px 30px;
   border-radius:999px;
-  text-decoration:none;
   font-weight:700;
+  text-decoration:none;
 }
 .btn.primary{
   background:var(--accent);
   color:#fff;
 }
 .btn.secondary{
-  background:rgba(255,255,255,0.15);
+  background:rgba(255,255,255,.12);
   color:#fff;
-  backdrop-filter:blur(6px);
 }
 
-/* FADE */
-.fade{
-  height:160px;
-  background:linear-gradient(to bottom, transparent, var(--bg));
+/* ================= PARTICULAS ================= */
+.particles span{
+  position:absolute;
+  width:6px;
+  height:6px;
+  background:rgba(255,255,255,.35);
+  border-radius:50%;
+  animation:float 18s linear infinite;
+}
+@keyframes float{
+  from{transform:translateY(0)}
+  to{transform:translateY(-120vh)}
 }
 
-/* SECTIONS */
+/* ================= SECTIONS ================= */
 .section{
   max-width:1200px;
-  margin:80px auto 0;
-  padding:0 20px;
+  margin:auto;
+  padding:120px 20px 0;
 }
 .section h2{
-  font-size:2.4rem;
+  font-size:2.3rem;
 }
 .section p{
   margin-top:10px;
@@ -160,7 +169,7 @@ nav a:hover{
 .feature{
   background:var(--card);
   padding:30px;
-  border-radius:20px;
+  border-radius:18px;
 }
 .feature img{
   width:100%;
@@ -170,15 +179,14 @@ nav a:hover{
 
 /* CTA */
 .cta{
-  margin:120px auto;
+  margin:140px auto;
   max-width:1200px;
   padding:70px 20px;
   background:linear-gradient(135deg,#5b7cff,#7aa2ff);
   border-radius:24px;
   text-align:center;
-  color:#fff;
 }
-.cta h2{font-size:2.6rem}
+.cta h2{font-size:2.5rem}
 .cta a{
   display:inline-block;
   margin-top:30px;
@@ -192,37 +200,45 @@ nav a:hover{
 
 /* FOOTER */
 footer{
-  padding:50px 20px;
+  padding:60px 20px;
   text-align:center;
   color:var(--muted);
   border-top:1px solid #1c2030;
-  margin-top:80px;
 }
 
-@media(max-width:900px){
-  .hero h1{font-size:2.6rem}
+/* ================= RESPONSIVE ================= */
+@media(max-width:768px){
+  .hero h1{font-size:2.2rem}
+  nav{display:none}
 }
 </style>
 </head>
 
 <body>
 
-<div class="decor left"></div>
-<div class="decor right"></div>
-
 <header>
-  <div class="logo">
-    <img src="assets/img/logo.png" alt="LunaticMC">
-    <span>LunaticMC</span>
+  <div class="header-inner">
+    <div class="logo">
+      <img src="img/logo.png" alt="LunaticMC">
+      <span>LunaticMC</span>
+    </div>
+    <nav>
+      <a href="#features">Servidor</a>
+      <a href="https://lunaticmc.tebex.io" target="_blank">Tienda</a>
+      <a href="https://discord.gg/TU_INVITE" target="_blank">Discord</a>
+    </nav>
   </div>
-  <nav>
-    <a href="#features">Servidor</a>
-    <a href="https://lunaticmc.tebex.io" target="_blank">Tienda</a>
-    <a href="https://discord.gg/TU_INVITE" target="_blank">Discord</a>
-  </nav>
 </header>
 
 <section class="hero">
+  <div class="particles">
+    <span style="left:10%"></span>
+    <span style="left:30%"></span>
+    <span style="left:55%"></span>
+    <span style="left:75%"></span>
+    <span style="left:90%"></span>
+  </div>
+
   <div class="hero-content">
     <h1>Una nueva forma de jugar Minecraft</h1>
     <p>
@@ -237,27 +253,25 @@ footer{
   </div>
 </section>
 
-<div class="fade"></div>
-
 <section class="section" id="features">
   <h2>¿Qué ofrece LunaticMC?</h2>
   <p>Un servidor cuidado en cada detalle.</p>
 
   <div class="features">
     <div class="feature">
-      <img src="assets/img/survival.png">
+      <img src="img/survival.png">
       <h3>Survival</h3>
       <p>Economía balanceada y progresión justa.</p>
     </div>
 
     <div class="feature">
-      <img src="assets/img/pvp.png">
+      <img src="img/pvp.png">
       <h3>PvP</h3>
       <p>Combates limpios y competitivos.</p>
     </div>
 
     <div class="feature">
-      <img src="assets/img/eventos.png">
+      <img src="img/eventos.png">
       <h3>Eventos</h3>
       <p>Eventos frecuentes con premios reales.</p>
     </div>
