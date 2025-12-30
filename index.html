@@ -5,10 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>LunaticMC Network</title>
-<meta name="description" content="LunaticMC Network • Servidor Minecraft">
+<meta name="description" content="LunaticMC Network • Servidor Minecraft Premium">
 
 <meta property="og:title" content="LunaticMC Network">
-<meta property="og:description" content="Únete a LunaticMC Network">
+<meta property="og:description" content="Servidor Minecraft premium • Únete ahora">
 <meta property="og:image" content="https://lunaticmc.net/256x256tblogo.png">
 <meta property="og:url" content="https://lunaticmc.net">
 
@@ -17,86 +17,117 @@
 <style>
 :root{
   --red:#e10600;
+  --bg:#070707;
 }
+*{box-sizing:border-box}
 body{
-  background:#0b0b0b;
-  color:#fff;
+  margin:0;
   font-family:Arial,Helvetica,sans-serif;
+  background:var(--bg);
+  color:#fff;
   overflow-x:hidden;
 }
 
-/* PARTÍCULAS */
-#particles{
-  position:fixed;
+/* VIDEO HERO */
+.hero{
+  position:relative;
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+}
+.hero video{
+  position:absolute;
+  top:0;left:0;
   width:100%;
   height:100%;
-  top:0;
-  left:0;
+  object-fit:cover;
+  z-index:-2;
+}
+.hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,.65);
+  z-index:-1;
+}
+
+/* PARTICLES */
+#particles{
+  position:absolute;
+  inset:0;
   z-index:-1;
 }
 
 /* NAV */
 .navbar{
-  background:rgba(0,0,0,.85);
-  backdrop-filter:blur(6px);
+  background:rgba(0,0,0,.6);
+  backdrop-filter:blur(8px);
 }
 
-/* HERO */
-.hero{
-  min-height:100vh;
-  display:flex;
-  align-items:center;
-  text-align:center;
-}
+/* HERO TEXT */
 .hero h1{
+  font-size:4rem;
+  font-weight:800;
   animation:fadeDown 1s;
 }
 .hero p{
+  font-size:1.3rem;
+  opacity:.9;
   animation:fadeUp 1.2s;
 }
 
 .ip-box{
-  border:2px solid var(--red);
-  padding:15px 30px;
-  border-radius:10px;
   display:inline-block;
-  margin-top:20px;
+  border:2px solid var(--red);
+  padding:15px 35px;
+  border-radius:50px;
+  font-size:1.3rem;
+  margin-top:25px;
   cursor:pointer;
   transition:.3s;
 }
 .ip-box:hover{
   background:var(--red);
-}
-
-/* SECTION */
-.section{
-  padding:90px 20px;
-}
-.card{
-  background:#111;
-  border:1px solid #222;
-  transition:.3s;
-}
-.card:hover{
-  transform:translateY(-8px);
-  box-shadow:0 0 25px rgba(225,6,0,.4);
+  box-shadow:0 0 30px rgba(225,6,0,.7);
 }
 
 /* STATUS */
 .status{
-  font-size:1.2rem;
+  margin-top:15px;
+  font-size:1.1rem;
 }
-.online{
-  color:#2ecc71;
+.online{color:#2ecc71}
+.offline{color:#e74c3c}
+
+/* SECTIONS */
+.section{
+  padding:100px 20px;
 }
-.offline{
-  color:#e74c3c;
+.card{
+  background:#0f0f0f;
+  border:1px solid #1c1c1c;
+  border-radius:18px;
+  padding:35px;
+  text-align:center;
+  transition:.4s;
+}
+.card:hover{
+  transform:translateY(-12px);
+  box-shadow:0 0 40px rgba(225,6,0,.4);
 }
 
-/* ANIMACIONES */
+/* STATS */
+.stats h2{
+  font-size:3rem;
+  color:var(--red);
+}
+
+/* FADE */
 .fade{
   opacity:0;
-  transform:translateY(30px);
+  transform:translateY(40px);
   transition:1s;
 }
 .fade.show{
@@ -104,13 +135,15 @@ body{
   transform:none;
 }
 
+/* FOOTER */
 footer{
-  background:#080808;
-  padding:30px;
+  background:#050505;
+  padding:40px;
   text-align:center;
-  color:#aaa;
+  color:#888;
 }
 
+/* ANIMS */
 @keyframes fadeDown{
   from{opacity:0;transform:translateY(-40px)}
   to{opacity:1}
@@ -123,8 +156,6 @@ footer{
 </head>
 <body>
 
-<div id="particles"></div>
-
 <!-- NAV -->
 <nav class="navbar navbar-dark fixed-top">
   <div class="container">
@@ -134,17 +165,25 @@ footer{
 
 <!-- HERO -->
 <section class="hero">
+  <video autoplay muted loop playsinline>
+    <source src="VIDEO_URL.mp4" type="video/mp4">
+  </video>
+
+  <div id="particles"></div>
+
   <div class="container">
-    <h1 class="display-4 fw-bold">LunaticMC Network</h1>
-    <p class="lead mt-3">Servidor Minecraft survival y competitivo</p>
+    <h1>LunaticMC Network</h1>
+    <p>Servidor Minecraft premium • Survival & PvP</p>
 
     <div class="ip-box" onclick="copyIP()">
-      IP: <strong>play.lunaticmc.net</strong>
-      <div class="small">(click para copiar)</div>
+      play.lunaticmc.net
     </div>
 
+    <div class="status" id="serverStatus">Cargando estado...</div>
+
     <div class="mt-4">
-      <span class="status" id="serverStatus">Cargando estado...</span>
+      <h2 id="playerCount" style="color:#e10600;font-size:3rem;">0</h2>
+      <p>Jugadores online</p>
     </div>
   </div>
 </section>
@@ -152,25 +191,44 @@ footer{
 <!-- MODOS -->
 <section class="section fade">
   <div class="container">
-    <h2 class="text-center mb-5">🎮 Modalidades</h2>
     <div class="row g-4">
       <div class="col-md-4">
-        <div class="card p-4 text-center">
-          <h4>Survival</h4>
-          <p>Economía balanceada y progreso continuo</p>
+        <div class="card">
+          <h3>⚔ Survival</h3>
+          <p>Economía balanceada, claims y progreso real.</p>
         </div>
       </div>
       <div class="col-md-4">
-        <div class="card p-4 text-center">
-          <h4>PvP</h4>
-          <p>Combates intensos y rankings</p>
+        <div class="card">
+          <h3>🏹 PvP</h3>
+          <p>Combates competitivos y rankings.</p>
         </div>
       </div>
       <div class="col-md-4">
-        <div class="card p-4 text-center">
-          <h4>Eventos</h4>
-          <p>Torneos y recompensas</p>
+        <div class="card">
+          <h3>🎉 Eventos</h3>
+          <p>Eventos semanales y recompensas únicas.</p>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="section fade text-center">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-md-4 stats">
+        <h2>24/7</h2>
+        <p>Online</p>
+      </div>
+      <div class="col-md-4 stats">
+        <h2>99.9%</h2>
+        <p>Uptime</p>
+      </div>
+      <div class="col-md-4 stats">
+        <h2>Premium</h2>
+        <p>Experiencia</p>
       </div>
     </div>
   </div>
@@ -182,17 +240,16 @@ footer{
   <p>© 2025</p>
 </footer>
 
-<!-- PARTÍCULAS -->
+<!-- PARTICLES -->
 <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-
 <script>
 particlesJS("particles",{
   particles:{
-    number:{value:70},
+    number:{value:60},
     color:{value:"#e10600"},
     size:{value:3},
-    move:{speed:2},
-    line_linked:{enable:true,color:"#e10600"}
+    move:{speed:1.5},
+    line_linked:{enable:true,color:"#e10600",opacity:.4}
   }
 });
 </script>
@@ -201,31 +258,36 @@ particlesJS("particles",{
 <script>
 fetch("https://api.mcsrvstat.us/2/play.lunaticmc.net")
 .then(r=>r.json())
-.then(data=>{
-  const el=document.getElementById("serverStatus");
-  if(data.online){
-    el.innerHTML=`🟢 Online • ${data.players.online}/${data.players.max} jugadores`;
-    el.classList.add("online");
+.then(d=>{
+  const s=document.getElementById("serverStatus");
+  if(d.online){
+    s.innerHTML="🟢 Online";
+    s.classList.add("online");
+    let c=0,t=d.players.online;
+    const i=setInterval(()=>{
+      c++;
+      document.getElementById("playerCount").innerText=c;
+      if(c>=t)clearInterval(i);
+    },40);
   }else{
-    el.innerHTML="🔴 Offline";
-    el.classList.add("offline");
+    s.innerHTML="🔴 Offline";
+    s.classList.add("offline");
   }
 });
 </script>
 
-<!-- SCROLL ANIM -->
+<!-- SCROLL FADE -->
 <script>
-const fades=document.querySelectorAll(".fade");
+const f=document.querySelectorAll(".fade");
 window.addEventListener("scroll",()=>{
-  fades.forEach(el=>{
-    if(el.getBoundingClientRect().top < window.innerHeight-100){
-      el.classList.add("show");
+  f.forEach(e=>{
+    if(e.getBoundingClientRect().top<window.innerHeight-120){
+      e.classList.add("show");
     }
   });
 });
 </script>
 
-<!-- COPY IP -->
 <script>
 function copyIP(){
   navigator.clipboard.writeText("play.lunaticmc.net");
