@@ -8,27 +8,30 @@
 <meta name="description" content="LunaticMC Network • Servidor Minecraft Premium">
 
 <meta property="og:title" content="LunaticMC Network">
-<meta property="og:description" content="Servidor Minecraft premium • Únete ahora">
+<meta property="og:description" content="Servidor Minecraft premium">
 <meta property="og:image" content="https://lunaticmc.net/256x256tblogo.png">
 <meta property="og:url" content="https://lunaticmc.net">
 
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
 <style>
 :root{
-  --red:#e10600;
-  --bg:#070707;
+  --bg:#0a0a0a;
+  --bg-soft:#0f0f0f;
+  --red:#c40000;
 }
 *{box-sizing:border-box}
 body{
   margin:0;
-  font-family:Arial,Helvetica,sans-serif;
+  font-family:'Inter',sans-serif;
   background:var(--bg);
   color:#fff;
   overflow-x:hidden;
 }
 
-/* VIDEO HERO */
+/* HERO */
 .hero{
   position:relative;
   min-height:100vh;
@@ -39,7 +42,7 @@ body{
 }
 .hero video{
   position:absolute;
-  top:0;left:0;
+  inset:0;
   width:100%;
   height:100%;
   object-fit:cover;
@@ -49,7 +52,7 @@ body{
   content:"";
   position:absolute;
   inset:0;
-  background:rgba(0,0,0,.65);
+  background:rgba(0,0,0,.7);
   z-index:-1;
 }
 
@@ -57,111 +60,119 @@ body{
 #particles{
   position:absolute;
   inset:0;
-  z-index:-1;
 }
 
-/* NAV */
-.navbar{
-  background:rgba(0,0,0,.6);
-  backdrop-filter:blur(8px);
-}
-
-/* HERO TEXT */
+/* TEXT */
 .hero h1{
-  font-size:4rem;
+  font-size:4.2rem;
   font-weight:800;
-  animation:fadeDown 1s;
+  letter-spacing:-2px;
 }
 .hero p{
+  margin-top:15px;
   font-size:1.3rem;
-  opacity:.9;
-  animation:fadeUp 1.2s;
+  opacity:.8;
 }
 
 .ip-box{
+  margin-top:30px;
   display:inline-block;
-  border:2px solid var(--red);
-  padding:15px 35px;
+  padding:16px 42px;
   border-radius:50px;
-  font-size:1.3rem;
-  margin-top:25px;
+  border:1px solid var(--red);
   cursor:pointer;
   transition:.3s;
 }
 .ip-box:hover{
   background:var(--red);
-  box-shadow:0 0 30px rgba(225,6,0,.7);
+  box-shadow:0 0 30px rgba(196,0,0,.6);
 }
-
-/* STATUS */
-.status{
-  margin-top:15px;
-  font-size:1.1rem;
-}
-.online{color:#2ecc71}
-.offline{color:#e74c3c}
 
 /* SECTIONS */
 .section{
-  padding:100px 20px;
+  padding:120px 20px;
+  max-width:1200px;
+  margin:auto;
 }
-.card{
-  background:#0f0f0f;
-  border:1px solid #1c1c1c;
-  border-radius:18px;
-  padding:35px;
-  text-align:center;
-  transition:.4s;
-}
-.card:hover{
-  transform:translateY(-12px);
-  box-shadow:0 0 40px rgba(225,6,0,.4);
-}
-
-/* STATS */
-.stats h2{
-  font-size:3rem;
-  color:var(--red);
-}
-
-/* FADE */
 .fade{
   opacity:0;
   transform:translateY(40px);
-  transition:1s;
+  transition:1s ease;
 }
 .fade.show{
   opacity:1;
   transform:none;
 }
 
-/* FOOTER */
-footer{
-  background:#050505;
-  padding:40px;
+/* STATUS */
+#serverLive{
   text-align:center;
-  color:#888;
+  opacity:.75;
 }
 
-/* ANIMS */
-@keyframes fadeDown{
-  from{opacity:0;transform:translateY(-40px)}
-  to{opacity:1}
+/* STATS */
+.stats{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:80px;
+  text-align:center;
 }
-@keyframes fadeUp{
-  from{opacity:0;transform:translateY(40px)}
-  to{opacity:1}
+.stats h2{
+  font-size:3.2rem;
+  color:var(--red);
+}
+.stats p{
+  opacity:.7;
+}
+
+/* MODES */
+.modes{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:40px;
+}
+.mode{
+  background:var(--bg-soft);
+  padding:40px;
+  border-radius:18px;
+  transition:.4s;
+}
+.mode:hover{
+  transform:translateY(-10px);
+  box-shadow:0 0 35px rgba(196,0,0,.35);
+}
+
+/* DISCORD */
+.discord-btn{
+  margin-top:30px;
+  display:inline-block;
+  padding:18px 44px;
+  border-radius:40px;
+  border:1px solid var(--red);
+  color:#fff;
+  text-decoration:none;
+  transition:.3s;
+}
+.discord-btn:hover{
+  background:var(--red);
+  box-shadow:0 0 30px rgba(196,0,0,.6);
+}
+
+/* FOOTER */
+footer{
+  padding:50px;
+  text-align:center;
+  background:#050505;
+  color:#777;
+}
+
+/* MOBILE */
+@media(max-width:700px){
+  .hero h1{font-size:2.8rem}
 }
 </style>
 </head>
 <body>
-
-<!-- NAV -->
-<nav class="navbar navbar-dark fixed-top">
-  <div class="container">
-    <span class="navbar-brand fw-bold">LunaticMC</span>
-  </div>
-</nav>
 
 <!-- HERO -->
 <section class="hero">
@@ -171,67 +182,63 @@ footer{
 
   <div id="particles"></div>
 
-  <div class="container">
-    <h1>LunaticMC Network</h1>
-    <p>Servidor Minecraft premium • Survival & PvP</p>
+  <div>
+    <h1>LunaticMC</h1>
+    <p>Servidor Minecraft premium</p>
 
     <div class="ip-box" onclick="copyIP()">
       play.lunaticmc.net
     </div>
 
-    <div class="status" id="serverStatus">Cargando estado...</div>
-
-    <div class="mt-4">
-      <h2 id="playerCount" style="color:#e10600;font-size:3rem;">0</h2>
-      <p>Jugadores online</p>
-    </div>
-  </div>
-</section>
-
-<!-- MODOS -->
-<section class="section fade">
-  <div class="container">
-    <div class="row g-4">
-      <div class="col-md-4">
-        <div class="card">
-          <h3>⚔ Survival</h3>
-          <p>Economía balanceada, claims y progreso real.</p>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card">
-          <h3>🏹 PvP</h3>
-          <p>Combates competitivos y rankings.</p>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card">
-          <h3>🎉 Eventos</h3>
-          <p>Eventos semanales y recompensas únicas.</p>
-        </div>
-      </div>
-    </div>
+    <p id="serverLive">Cargando estado…</p>
   </div>
 </section>
 
 <!-- STATS -->
-<section class="section fade text-center">
-  <div class="container">
-    <div class="row g-4">
-      <div class="col-md-4 stats">
-        <h2>24/7</h2>
-        <p>Online</p>
-      </div>
-      <div class="col-md-4 stats">
-        <h2>99.9%</h2>
-        <p>Uptime</p>
-      </div>
-      <div class="col-md-4 stats">
-        <h2>Premium</h2>
-        <p>Experiencia</p>
-      </div>
+<section class="section fade">
+  <div class="stats">
+    <div>
+      <h2 id="statPlayers">0</h2>
+      <p>Jugadores online</p>
+    </div>
+    <div>
+      <h2>1.20+</h2>
+      <p>Versiones</p>
+    </div>
+    <div>
+      <h2>24/7</h2>
+      <p>Uptime</p>
     </div>
   </div>
+</section>
+
+<!-- MODES -->
+<section class="section fade">
+  <div class="modes">
+    <div class="mode">
+      <h3>⚔ Survival</h3>
+      <p>Economía balanceada y progresión real.</p>
+    </div>
+    <div class="mode">
+      <h3>🏹 PvP</h3>
+      <p>Combates competitivos y rankings.</p>
+    </div>
+    <div class="mode">
+      <h3>🎉 Eventos</h3>
+      <p>Eventos semanales y recompensas únicas.</p>
+    </div>
+  </div>
+</section>
+
+<!-- DISCORD -->
+<section class="section fade" style="text-align:center">
+  <h2>Únete a la comunidad</h2>
+  <p style="opacity:.7;margin-top:10px">
+    Anuncios, eventos y soporte
+  </p>
+  <a class="discord-btn" href="https://discord.gg/TU_INVITE" target="_blank">
+    Entrar al Discord
+  </a>
 </section>
 
 <footer>
@@ -245,11 +252,11 @@ footer{
 <script>
 particlesJS("particles",{
   particles:{
-    number:{value:60},
-    color:{value:"#e10600"},
-    size:{value:3},
-    move:{speed:1.5},
-    line_linked:{enable:true,color:"#e10600",opacity:.4}
+    number:{value:50},
+    color:{value:"#c40000"},
+    size:{value:2},
+    move:{speed:1.2},
+    line_linked:{enable:true,color:"#c40000",opacity:.3}
   }
 });
 </script>
@@ -259,33 +266,30 @@ particlesJS("particles",{
 fetch("https://api.mcsrvstat.us/2/play.lunaticmc.net")
 .then(r=>r.json())
 .then(d=>{
-  const s=document.getElementById("serverStatus");
+  const live=document.getElementById("serverLive");
+  const stat=document.getElementById("statPlayers");
   if(d.online){
-    s.innerHTML="🟢 Online";
-    s.classList.add("online");
+    live.innerHTML="🟢 Online · "+d.players.online+" jugadores";
     let c=0,t=d.players.online;
     const i=setInterval(()=>{
       c++;
-      document.getElementById("playerCount").innerText=c;
+      stat.innerText=c;
       if(c>=t)clearInterval(i);
-    },40);
+    },30);
   }else{
-    s.innerHTML="🔴 Offline";
-    s.classList.add("offline");
+    live.innerHTML="🔴 Offline";
   }
 });
 </script>
 
-<!-- SCROLL FADE -->
+<!-- FADE -->
 <script>
-const f=document.querySelectorAll(".fade");
-window.addEventListener("scroll",()=>{
-  f.forEach(e=>{
-    if(e.getBoundingClientRect().top<window.innerHeight-120){
-      e.classList.add("show");
-    }
+const obs=new IntersectionObserver(e=>{
+  e.forEach(x=>{
+    if(x.isIntersecting)x.target.classList.add("show");
   });
-});
+},{threshold:.2});
+document.querySelectorAll(".fade").forEach(el=>obs.observe(el));
 </script>
 
 <script>
