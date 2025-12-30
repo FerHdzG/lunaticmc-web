@@ -3,208 +3,108 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>LunaticMC - Minecraft</title>
-  <meta name="description" content="Servidor de Minecraft LunaticMC" />
-  <link rel="icon" type="image/png" href="assets/image/favicon.png" />
+  <title>LunaticMC - Servidor Minecraft</title>
+  <link rel="icon" href="assets/image/favicon.png" />
 
-  <!-- Bootstrap & FontAwesome -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-  <link rel="stylesheet" href="assets/css/style.css" />
+  <!-- Bootstrap y FontAwesome -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <style>
-    /* Colores rojos oscuros y fondo */
-    body { background-color: #1c0b0b; color: #fff; }
-    .navbar, .footer-new { background-color: #2a0f0f !important; }
-    .btn-success { background-color: #8b0000; border-color: #8b0000; }
-    .btn-outline-light { border-color: #fff; color: #fff; }
-    .section { padding: 80px 0; }
-    .card, .privacy-card, .info-card, .tos-item, .hero-card { background: rgba(0,0,0,0.5); border: none; color: #fff; }
-    .hero { position: relative; height: 100vh; display: flex; align-items: center; justify-content: center; }
-    .video-background { position: absolute; top:0; left:0; width:100%; height:100%; overflow:hidden; z-index:-1; }
-    .video-background iframe { width:100%; height:100%; object-fit:cover; }
-    .hero-overlay { position:absolute; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.4); }
-    .ip-box { background: rgba(0,0,0,0.6); padding:10px 20px; border-radius:10px; display:inline-block; font-weight:bold; }
+    body { background: #0a0a0a; color: #eee; font-family: 'Arial', sans-serif; }
+    .section { padding: 60px 0; }
+    .btn-main { background:#8B0000; border:none; color:#fff; }
+    .btn-main:hover { background:#a30000; color:#fff; }
+    .card-simple { background: rgba(30,0,0,0.5); border: none; color:#fff; padding:20px; border-radius:8px; }
+    .link-redes a { margin-right:15px; text-decoration:none; color:#ff5555; }
+    .link-redes a:hover { color:#ff7777; }
+    .announcement { background: rgba(30,30,30,0.7); border-radius:8px; padding:15px; margin-bottom:15px; }
   </style>
 </head>
+
 <body>
+  <!-- Encabezado -->
+  <header class="text-center py-5" style="background:#1a0000;">
+    <h1 class="display-4">Bienvenido a LunaticMC</h1>
+    <p>Tu servidor de Minecraft — diversión, comunidad y aventura en un solo lugar</p>
+    <div style="font-size:1.4rem; font-weight:bold; color:#ff5555;">IP del servidor: play.lunaticmc.net</div>
+  </header>
 
-<!-- Navbar -->
-<header class="navbar navbar-expand-lg navbar-dark fixed-top">
-  <div class="container">
-    <a class="navbar-brand" href="#hero"><img src="assets/image/256x256lunaticmc.png" alt="LunaticMC" style="height:50px;"></a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="mainNav">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="#rules">Reglas</a></li>
-        <li class="nav-item"><a class="nav-link" href="#tos">ToS</a></li>
-        <li class="nav-item"><a class="nav-link" href="#imprint">Legal</a></li>
-        <li class="nav-item"><a class="nav-link" href="#privacy">Privacidad</a></li>
-        <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
-      </ul>
-    </div>
-  </div>
-</header>
-
-<!-- Hero -->
-<section id="hero" class="hero">
-  <div class="video-background">
-    <iframe src="https://www.youtube.com/embed/h8UpC5JbMU0?autoplay=1&mute=1&loop=1&playlist=h8UpC5JbMU0&controls=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-  </div>
-  <div class="hero-overlay"></div>
-  <div class="container text-center">
-    <h1 class="display-4 fw-bold">¡Bienvenido a LunaticMC!</h1>
-    <p class="lead">Explora, construye y disfruta de la experiencia survival en LunaticMC.</p>
-    <div class="mt-4">
-      <a href="#social" class="btn btn-success btn-lg me-2">Unirse al servidor</a>
-      <a href="#faq" class="btn btn-outline-light btn-lg">FAQ</a>
-    </div>
-    <div class="hero-card mt-4">
-      <h2>IP del servidor</h2>
-      <div class="ip-box">play.lunaticmc.net</div>
-    </div>
-  </div>
-</section>
-
-<main>
-  <!-- Reglas -->
-  <section id="rules" class="section">
+  <!-- Redes Sociales -->
+  <section class="text-center section">
     <div class="container">
-      <h2 class="text-center mb-5">Reglas del servidor</h2>
-      <div class="row g-4">
-        <div class="col-md-4">
-          <div class="card p-3">
-            <h5>Juego justo</h5>
-            <p>Prohibido cualquier tipo de hack, macro o x-ray. Se monitorean los logs.</p>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card p-3">
-            <h5>Respeto</h5>
-            <p>Evita insultos, comportamiento tóxico o discriminación.</p>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card p-3">
-            <h5>Economía</h5>
-            <p>No manipular mercados ni duplicar items de forma sistemática.</p>
-          </div>
-        </div>
+      <h2>¡Únete a nuestras redes!</h2>
+      <div class="link-redes mt-3">
+        <a href="#"><i class="fab fa-discord"></i> Discord Oficial</a>
+        <a href="#"><i class="fab fa-twitter"></i> Twitter / X</a>
+        <a href="#"><i class="fab fa-youtube"></i> YouTube</a>
       </div>
     </div>
   </section>
 
-  <!-- ToS -->
-  <section id="tos" class="section bg-dark">
+  <!-- Tienda -->
+  <section class="text-center section" style="background:#0f0000;">
     <div class="container">
-      <h2 class="text-center mb-5">Términos de Servicio (ToS)</h2>
-      <div class="row g-4">
-        <div class="col-md-6">
-          <div class="card p-3">
-            <h5>Alcance del servicio</h5>
-            <p>El servidor y servicios web son proporcionados por LunaticMC.</p>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="card p-3">
-            <h5>Responsabilidad de cuenta</h5>
-            <p>La seguridad de tu cuenta es tu responsabilidad.</p>
-          </div>
-        </div>
+      <h2>Tienda Oficial</h2>
+      <p>¡Compra rangos y beneficios para LunaticMC!</p>
+      <a class="btn btn-main" href="#">Tienda Java</a>
+      <a class="btn btn-main ms-2" href="#">Tienda Bedrock</a>
+    </div>
+  </section>
+
+  <!-- Explicaciones -->
+  <section class="section">
+    <div class="container text-center">
+      <h2>¡Te guiamos con nuestras explicaciones!</h2>
+      <div class="mt-4">
+        <a class="btn btn-outline-light btn-sm me-2" href="#">Cómo jugar</a>
+        <a class="btn btn-outline-light btn-sm me-2" href="#">Modalidades</a>
+        <a class="btn btn-outline-light btn-sm me-2" href="#">Player Warps</a>
+        <a class="btn btn-outline-light btn-sm" href="#">Ayuda & Soporte</a>
       </div>
     </div>
   </section>
 
-  <!-- Legal / Imprint -->
-  <section id="imprint" class="section">
+  <!-- Anuncios -->
+  <section class="section" style="background:#111;">
     <div class="container">
-      <h2 class="text-center mb-5">Información Legal</h2>
-      <div class="row g-4">
-        <div class="col-md-6">
-          <div class="card p-3">
-            <h5>Empresa</h5>
-            <ul>
-              <li>Nombre: LunaticMC S.A.</li>
-              <li>Dirección: CDMX, México</li>
-              <li>Contacto: legal@lunaticmc.net</li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="card p-3">
-            <h5>Ley & Licencia</h5>
-            <p>Todos los assets de Minecraft siguen EULA de Mojang. Scripts y modelos son propiedad de LunaticMC.</p>
-          </div>
-        </div>
+      <h2 class="text-center mb-4">Anuncios importantes</h2>
+      <div class="announcement">
+        <h5>Mantenimiento programado del servidor</h5>
+        <p>El servidor tendrá mantenimiento programado prontamente a partir de las 16:00h. Mantente al tanto de los detalles.</p>
+      </div>
+      <div class="announcement">
+        <h5>Competición de Construcción</h5>
+        <p>¡Participa en la nueva competencia de construcción y gana recompensas exclusivas!</p>
+      </div>
+      <div class="announcement">
+        <h5>Actualización de rangos</h5>
+        <p>Hemos ajustado los beneficios y precios de rangos en tienda.</p>
+      </div>
+      <p class="text-center"><a href="#" class="btn btn-outline-light btn-sm">Ver más anuncios</a></p>
+    </div>
+  </section>
+
+  <!-- Moneda Interna -->
+  <section class="section text-center">
+    <div class="container">
+      <h2>Nuestra moneda interna</h2>
+      <p>Con estas monedas podrás obtener ítems y ventajas dentro del servidor</p>
+      <div class="row justify-content-center g-3 mt-4">
+        <div class="col-md-2 card-simple"><strong>5,000 Coins</strong><br>$4.99</div>
+        <div class="col-md-2 card-simple"><strong>10,000 Coins</strong><br>$10.00</div>
+        <div class="col-md-2 card-simple"><strong>50,000 Coins</strong><br>$45.00</div>
+        <div class="col-md-2 card-simple"><strong>100,000 Coins</strong><br>$90.00</div>
       </div>
     </div>
   </section>
 
-  <!-- Privacidad -->
-  <section id="privacy" class="section bg-dark">
-    <div class="container">
-      <h2 class="text-center mb-5">Política de Privacidad</h2>
-      <div class="row g-4">
-        <div class="col-md-4">
-          <div class="card p-3">
-            <h5>Datos recopilados</h5>
-            <p>IP, estadísticas de juego, transacciones y soporte se almacenan cumpliendo con la ley.</p>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card p-3">
-            <h5>Tiempo de retención</h5>
-            <p>Datos de cuentas activas se mantienen cifrados; tras 12 meses de inactividad se anonimiza.</p>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card p-3">
-            <h5>Tus derechos</h5>
-            <p>Solicita acceso, corrección o eliminación enviando correo a privacy@lunaticmc.net</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  <!-- Footer -->
+  <footer class="text-center py-4" style="background:#1a0000;">
+    <p>© 2025 LunaticMC | No afiliado a Mojang AB</p>
+    <p>Creado con estilo inspirado en NauticMC</p>
+  </footer>
 
-  <!-- FAQ -->
-  <section id="faq" class="section">
-    <div class="container">
-      <h2 class="text-center mb-5">Preguntas Frecuentes</h2>
-      <div class="accordion" id="faqAccordion">
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="faqOne">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapseOne">¿Qué versión del servidor se usa?</button>
-          </h2>
-          <div id="faqCollapseOne" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-            <div class="accordion-body">Paper 1.21.x con plugins personalizados y ItemsAdder/Oraxen.</div>
-          </div>
-        </div>
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="faqTwo">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapseTwo">¿Puedo jugar con cuenta no premium?</button>
-          </h2>
-          <div id="faqCollapseTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-            <div class="accordion-body">Sí, con LunaticMC ID y verificación en dos pasos.</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-</main>
-
-<!-- Footer -->
-<footer class="footer-new">
-  <div class="container text-center py-4">
-    <img src="assets/image/256x256lunaticmc.png" alt="LunaticMC" style="height:60px;" class="mb-2">
-    <p>© 2025 LunaticMC. Todos los derechos reservados.</p>
-  </div>
-</footer>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="assets/js/main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
