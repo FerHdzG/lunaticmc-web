@@ -28,6 +28,8 @@ body{
 
 /* HEADER */
 header{
+  position:relative;
+  z-index:2;
   max-width:1200px;
   margin:auto;
   padding:30px 20px;
@@ -41,9 +43,8 @@ header{
   gap:12px;
   font-weight:700;
 }
-.logo img{
-  width:36px;
-}
+.logo img{width:36px}
+
 nav{
   display:flex;
   gap:30px;
@@ -55,25 +56,41 @@ nav a{
 }
 nav a:hover{color:#fff}
 
-/* HERO */
+/* HERO CON FONDO */
 .hero{
-  max-width:1200px;
-  margin:40px auto 0;
-  padding:80px 20px;
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:60px;
+  position:relative;
+  min-height:100vh;
+  background:
+    linear-gradient(to bottom,
+      rgba(15,17,21,0.2),
+      rgba(15,17,21,0.6),
+      #0f1115
+    ),
+    url("img/hero.png") center/cover no-repeat;
+  display:flex;
   align-items:center;
 }
+
+.hero-content{
+  position:relative;
+  z-index:2;
+  max-width:1200px;
+  margin:auto;
+  padding:0 20px;
+}
+
 .hero h1{
-  font-size:3.2rem;
+  font-size:3.5rem;
   line-height:1.1;
+  max-width:700px;
 }
 .hero p{
   margin-top:20px;
   color:var(--muted);
-  font-size:1.1rem;
+  font-size:1.2rem;
+  max-width:600px;
 }
+
 .hero-buttons{
   margin-top:30px;
   display:flex;
@@ -92,10 +109,6 @@ nav a:hover{color:#fff}
 .btn.secondary{
   border:1px solid #2a2f40;
   color:#fff;
-}
-.hero img{
-  width:100%;
-  border-radius:16px;
 }
 
 /* SECTIONS */
@@ -162,8 +175,7 @@ footer{
 }
 
 @media(max-width:900px){
-  .hero{grid-template-columns:1fr}
-  .hero img{order:-1}
+  .hero h1{font-size:2.6rem}
 }
 </style>
 </head>
@@ -172,7 +184,7 @@ footer{
 
 <header>
   <div class="logo">
-    <img src="assets/img/logo.png" alt="LunaticMC Logo">
+    <img src="img/logo.png" alt="LunaticMC">
     <span>LunaticMC</span>
   </div>
   <nav>
@@ -183,7 +195,7 @@ footer{
 </header>
 
 <section class="hero">
-  <div>
+  <div class="hero-content">
     <h1>Una nueva forma de jugar Minecraft</h1>
     <p>
       LunaticMC es un servidor diseñado para una experiencia
@@ -195,8 +207,6 @@ footer{
       <a href="https://discord.gg/TU_INVITE" class="btn secondary">Discord</a>
     </div>
   </div>
-
-  <img src="assets/img/hero.png" alt="LunaticMC Minecraft">
 </section>
 
 <section class="section" id="features">
@@ -205,19 +215,19 @@ footer{
 
   <div class="features">
     <div class="feature">
-      <img src="assets/img/survival.png" alt="Survival">
+      <img src="img/survival.png" alt="Survival">
       <h3>Survival</h3>
       <p>Economía balanceada y progresión justa.</p>
     </div>
 
     <div class="feature">
-      <img src="assets/img/pvp.png" alt="PvP">
+      <img src="img/pvp.png" alt="PvP">
       <h3>PvP</h3>
       <p>Combates limpios y competitivos.</p>
     </div>
 
     <div class="feature">
-      <img src="assets/img/eventos.png" alt="Eventos">
+      <img src="img/eventos.png" alt="Eventos">
       <h3>Eventos</h3>
       <p>Eventos frecuentes con premios reales.</p>
     </div>
