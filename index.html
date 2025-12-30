@@ -28,14 +28,14 @@ body{
 
 /* HEADER */
 header{
-  position:relative;
-  z-index:2;
   max-width:1200px;
   margin:auto;
   padding:30px 20px;
   display:flex;
   justify-content:space-between;
   align-items:center;
+  position:relative;
+  z-index:2;
 }
 .logo{
   display:flex;
@@ -43,8 +43,9 @@ header{
   gap:12px;
   font-weight:700;
 }
-.logo img{width:36px}
-
+.logo img{
+  width:36px;
+}
 nav{
   display:flex;
   gap:30px;
@@ -56,46 +57,43 @@ nav a{
 }
 nav a:hover{color:#fff}
 
-/* HERO CON FONDO */
+/* HERO */
 .hero{
-  position:relative;
   min-height:100vh;
-  background:
-    linear-gradient(to bottom,
-      rgba(15,17,21,0.2),
-      rgba(15,17,21,0.6),
-      #0f1115
-    ),
-    url("img/hero.png") center/cover no-repeat;
   display:flex;
   align-items:center;
+  position:relative;
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(15,17,21,0.2),
+      rgba(15,17,21,1)
+    ),
+    url("assets/img/hero.png") center/cover no-repeat;
 }
 
 .hero-content{
-  position:relative;
-  z-index:2;
   max-width:1200px;
   margin:auto;
   padding:0 20px;
 }
 
 .hero h1{
-  font-size:3.5rem;
+  font-size:3.4rem;
   line-height:1.1;
-  max-width:700px;
 }
 .hero p{
   margin-top:20px;
   color:var(--muted);
-  font-size:1.2rem;
+  font-size:1.1rem;
   max-width:600px;
 }
-
 .hero-buttons{
   margin-top:30px;
   display:flex;
   gap:20px;
 }
+
 .btn{
   padding:14px 28px;
   border-radius:8px;
@@ -114,7 +112,7 @@ nav a:hover{color:#fff}
 /* SECTIONS */
 .section{
   max-width:1200px;
-  margin:100px auto 0;
+  margin:120px auto 0;
   padding:0 20px;
 }
 .section h2{
@@ -175,7 +173,7 @@ footer{
 }
 
 @media(max-width:900px){
-  .hero h1{font-size:2.6rem}
+  .hero h1{font-size:2.4rem}
 }
 </style>
 </head>
@@ -184,7 +182,7 @@ footer{
 
 <header>
   <div class="logo">
-    <img src="img/logo.png" alt="LunaticMC">
+    <img src="assets/img/logo.png" alt="LunaticMC">
     <span>LunaticMC</span>
   </div>
   <nav>
@@ -215,19 +213,19 @@ footer{
 
   <div class="features">
     <div class="feature">
-      <img src="img/survival.png" alt="Survival">
+      <img src="assets/img/survival.png" alt="Survival">
       <h3>Survival</h3>
       <p>Economía balanceada y progresión justa.</p>
     </div>
 
     <div class="feature">
-      <img src="img/pvp.png" alt="PvP">
+      <img src="assets/img/pvp.png" alt="PvP">
       <h3>PvP</h3>
       <p>Combates limpios y competitivos.</p>
     </div>
 
     <div class="feature">
-      <img src="img/eventos.png" alt="Eventos">
+      <img src="assets/img/eventos.png" alt="Eventos">
       <h3>Eventos</h3>
       <p>Eventos frecuentes con premios reales.</p>
     </div>
