@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>LunaticMC Network</title>
-<meta name="description" content="LunaticMC Network • Servidor Minecraft Premium">
+<meta name="description" content="LunaticMC Network • Servidor Minecraft premium">
 
 <meta property="og:title" content="LunaticMC Network">
 <meta property="og:description" content="Servidor Minecraft premium">
@@ -17,7 +17,7 @@
 <style>
 :root{
   --bg:#0a0a0a;
-  --bg-soft:#0f0f0f;
+  --bg-soft:#111;
   --red:#c40000;
 }
 *{box-sizing:border-box}
@@ -29,33 +29,69 @@ body{
   overflow-x:hidden;
 }
 
-/* TOP BAR */
-.topbar{
-  position:fixed;
-  top:20px;
-  right:20px;
-  z-index:10;
+/* HEADER SILK */
+.silk-header{
+  position:absolute;
+  top:40px;
+  left:50%;
+  transform:translateX(-50%);
   display:flex;
-  gap:15px;
+  align-items:center;
+  gap:60px;
+  z-index:5;
+  animation:fadeDown 1.2s ease;
 }
-.top-btn{
-  padding:12px 26px;
-  border-radius:40px;
-  border:1px solid var(--red);
+.silk-logo{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  font-weight:700;
+  font-size:1.2rem;
+}
+.silk-logo img{
+  width:38px;
+  height:38px;
+}
+.silk-nav{
+  display:flex;
+  gap:35px;
+  align-items:center;
+}
+.silk-nav a{
   color:#fff;
   text-decoration:none;
-  font-weight:600;
-  backdrop-filter:blur(6px);
+  font-weight:500;
+  opacity:.75;
   transition:.3s;
-  animation:float 3s ease-in-out infinite;
 }
-.top-btn:hover{
+.silk-nav a:hover{
+  opacity:1;
+  color:var(--red);
+}
+.server-dot{
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  background:#777;
+  box-shadow:0 0 10px currentColor;
+}
+.join-btn{
+  padding:10px 22px;
+  border-radius:30px;
+  border:1px solid var(--red);
+  text-decoration:none;
+  color:#fff;
+  font-weight:600;
+  transition:.3s;
+}
+.join-btn:hover{
   background:var(--red);
   box-shadow:0 0 25px rgba(196,0,0,.6);
 }
-@keyframes float{
-  0%,100%{transform:translateY(0)}
-  50%{transform:translateY(-6px)}
+
+@keyframes fadeDown{
+  from{opacity:0; transform:translate(-50%,-20px)}
+  to{opacity:1; transform:translate(-50%,0)}
 }
 
 /* HERO */
@@ -70,14 +106,8 @@ body{
     linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.65)),
     url("https://images.alphacoders.com/135/1355661.png") center/cover no-repeat;
 }
+#particles{position:absolute; inset:0}
 
-/* PARTICLES */
-#particles{
-  position:absolute;
-  inset:0;
-}
-
-/* HERO TEXT */
 .hero h1{
   font-size:4.2rem;
   font-weight:800;
@@ -88,7 +118,6 @@ body{
   font-size:1.3rem;
   opacity:.8;
 }
-
 .ip-box{
   margin-top:30px;
   display:inline-block;
@@ -102,7 +131,6 @@ body{
   background:var(--red);
   box-shadow:0 0 30px rgba(196,0,0,.6);
 }
-
 #serverLive{
   margin-top:15px;
   opacity:.75;
@@ -162,32 +190,37 @@ footer{
   color:#777;
 }
 
-@media(max-width:700px){
+@media(max-width:768px){
   .hero h1{font-size:2.8rem}
-  .topbar{right:10px;top:10px}
+  .silk-header{flex-direction:column; gap:20px}
 }
 </style>
 </head>
 <body>
 
-<!-- TOP BUTTONS -->
-<div class="topbar">
-  <a class="top-btn" href="https://lunaticmc.tebex.io" target="_blank">🛒 Tienda</a>
-  <a class="top-btn" href="https://discord.gg/TU_INVITE" target="_blank">💬 Discord</a>
-</div>
+<!-- HEADER -->
+<header class="silk-header">
+  <div class="silk-logo">
+    <img src="256x256tblogo.png" alt="LunaticMC">
+    <span>LunaticMC</span>
+  </div>
+
+  <nav class="silk-nav">
+    <span class="server-dot" id="dot"></span>
+    <a href="https://lunaticmc.tebex.io" target="_blank">Store</a>
+    <a href="https://discord.gg/TU_INVITE" target="_blank">Discord</a>
+    <a href="#play" class="join-btn">Play</a>
+  </nav>
+</header>
 
 <!-- HERO -->
-<section class="hero">
+<section class="hero" id="play">
   <div id="particles"></div>
-
   <div>
     <h1>LunaticMC</h1>
     <p>Servidor Minecraft premium</p>
 
-    <div class="ip-box" onclick="copyIP()">
-      play.lunaticmc.net
-    </div>
-
+    <div class="ip-box" onclick="copyIP()">play.lunaticmc.net</div>
     <p id="serverLive">Cargando estado…</p>
   </div>
 </section>
@@ -219,11 +252,11 @@ footer{
     </div>
     <div class="mode">
       <h3>🏹 PvP</h3>
-      <p>Combates competitivos y rankings.</p>
+      <p>Combates competitivos.</p>
     </div>
     <div class="mode">
       <h3>🎉 Eventos</h3>
-      <p>Eventos semanales y recompensas únicas.</p>
+      <p>Eventos semanales.</p>
     </div>
   </div>
 </section>
@@ -254,16 +287,18 @@ fetch("https://api.mcsrvstat.us/2/play.lunaticmc.net")
 .then(r=>r.json())
 .then(d=>{
   const live=document.getElementById("serverLive");
+  const dot=document.getElementById("dot");
   const stat=document.getElementById("statPlayers");
   if(d.online){
+    dot.style.background="#2cff6f";
     live.innerHTML="🟢 Online · "+d.players.online+" jugadores";
     let c=0,t=d.players.online;
     const i=setInterval(()=>{
-      c++;
-      stat.innerText=c;
+      c++; stat.innerText=c;
       if(c>=t)clearInterval(i);
     },25);
   }else{
+    dot.style.background="#ff3b3b";
     live.innerHTML="🔴 Offline";
   }
 });
