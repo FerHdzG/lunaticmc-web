@@ -120,7 +120,7 @@ const config = {
             },
             { 
                 q_es: "¿Cómo protejo mi casa?", a_es: "Utilizamos el sistema de protección por bloques (menas de protección). Simplemente coloca la mena en tu terreno para protegerlo.",
-                q_en: "How do I protect my house?", a_en: "We use the block protection system (block protection). Simply click on two opposite corners of your land to claim it."
+                q_en: "How do I protect my house?", a_en: "We use the block protection system (block protection). Simply place the ore on your land to protect it."
             },
             { 
                 q_es: "¿Tienen chat de voz?", a_es: "Sí, soportamos el mod <b>Simple Voice Chat</b>. No es obligatorio para jugar, pero mejora la experiencia en el servidor.",
