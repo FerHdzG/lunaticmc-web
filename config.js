@@ -4,19 +4,19 @@
 
 const config = {
     // 1. INFO SERVIDOR
-    serverName: "VanguardMC",
-    serverIp: "mc.diosesmc.net",
+    serverName: "LunaticMC",
+    serverIp: "play.lunaticmc.net",
     serverLogo: "logo.png", // Asegúrate de que existe
     // El favicon se carga automáticamente si se llama "favicon.png"
 
     // 2. REDES SOCIALES
     social: {
-        discord: "https://discord.ejemplo.com",
-        store: "https://tienda.ejemplo.com",
-        twitter: "https://twitter.ejemplo.com",
-        instagram: "https://instagram.ejemplo.com",
+        discord: "https://discord.gg/fUYA7XQzSP",
+        store: "https://lunaticmc.tebex.io",
+        twitter: "https://x.com/LunaticMCNW",
+        instagram: "https://www.instagram.com/lossalineros_oficial",
         tiktok: "https://tiktok.ejemplo.com",
-        youtube: "https://youtube.ejemplo.com"
+        youtube: "https://www.youtube.com/@LunaticMCNT"
     },
 
     // 3. ENLACES DE VOTACIÓN (6 Sitios)
@@ -34,24 +34,29 @@ const config = {
         // --- STAFF ---
         staff: [
             { 
-                name: "OwnerJuan", role: "OWNER", 
+                name: "ZTechPro", role: "OWNER", 
                 bio_es: "Fundador del proyecto, encargado del desarrollo técnico y sistemas.",
                 bio_en: "Project founder, in charge of technical development and systems."
             },
             { 
-                name: "AdminMaria", role: "ADMIN", 
+                name: ".TheepicGAB96", role: "OWNER", 
+                bio_es: "Fundador del proyecto, encargado del desarrollo técnico y sistemas.",
+                bio_en: "Project founder, in charge of technical development and systems."
+            },
+            { 
+                name: "Wiznez", role: "MANAGER", 
                 bio_es: "Gestora de la comunidad, eventos y resolución de conflictos.",
                 bio_en: "Community manager, events coordinator and conflict resolution."
             },
             { 
-                name: "DevCarlos", role: "DEV", 
+                name: "MrTerde_", role: "DEV", 
                 bio_es: "Programador de plugins y optimización del servidor.",
                 bio_en: "Plugin developer and server optimization specialist."
             },
             { 
-                name: "ModAlex", role: "MOD", 
-                bio_es: "Encargado de reportes, vigilancia y soporte a usuarios.",
-                bio_en: "In charge of reports, surveillance, and user support."
+                name: "Dani", role: "DISCORD DEV", 
+                bio_es: "Encargado de mantener actualizado eo discord y añadir nuevos canales.",
+                bio_en: "Responsible for keeping the Discord server updated and adding new channels."
             }
         ],
 
@@ -94,8 +99,8 @@ const config = {
         // --- PREGUNTAS FRECUENTES (8 FAQs) ---
         faq: [
             { 
-                q_es: "¿Cuál es la IP del servidor?", a_es: "La IP para conectarse es <b>play.vanguard.net</b>. El servidor es compatible con las versiones 1.16 hasta la 1.21 de Minecraft Java Edition.",
-                q_en: "What is the Server IP?", a_en: "The connection IP is <b>play.vanguard.net</b>. The server supports Minecraft Java Edition versions 1.16 through 1.21."
+                q_es: "¿Cuál es la IP del servidor?", a_es: "La IP para conectarse es <b>play.lunaticmc.net</b>. El servidor es compatible con las versiones 1.16 hasta la 1.21 de Minecraft Java Edition.",
+                q_en: "What is the Server IP?", a_en: "The connection IP is <b>play.lunaticmc.net</b>. The server supports Minecraft Java Edition versions 1.16 through 1.21."
             },
             { 
                 q_es: "¿Es Premium o No-Premium?", a_es: "Somos un servidor <b>Semi-Premium</b>. Esto significa que puedes entrar tanto con una cuenta oficial de Mojang/Microsoft como con lanzadores no oficiales.",
@@ -132,10 +137,10 @@ const config = {
             // TÉRMINOS DEL SERVICIO
             tos_es: `
                 <h3>Alcance del Servicio</h3>
-                <p>El servidor, los servicios web y la infraestructura del launcher son proporcionados por Vanguard Networks S.L. El acceso al servicio es un privilegio, no un derecho.</p>
+                <p>El servidor, los servicios web y la infraestructura del launcher son proporcionados por LunaticMC Networks S.L. El acceso al servicio es un privilegio, no un derecho.</p>
                 <br>
                 <h3>Responsabilidad de la Cuenta</h3>
-                <p>La seguridad de la cuenta de usuario es responsabilidad exclusiva del jugador. VanguardMC no se hace responsable de pérdidas ocasionadas por el robo de cuentas, intercambio de contraseñas o descuidos de seguridad por parte del usuario.</p>
+                <p>La seguridad de la cuenta de usuario es responsabilidad exclusiva del jugador. LunaticMC no se hace responsable de pérdidas ocasionadas por el robo de cuentas, intercambio de contraseñas o descuidos de seguridad por parte del usuario.</p>
                 <br>
                 <h3>Pagos y Reembolsos</h3>
                 <p>Las compras realizadas en la tienda del servidor se consideran bienes digitales intangibles. Conforme a la normativa vigente sobre productos digitales, una vez entregado el servicio o rango, <b>no se admiten devoluciones ni reembolsos</b> bajo ninguna circunstancia. Cualquier intento de devolución de cargo (chargeback) resultará en un bloqueo permanente de la cuenta.</p>
@@ -145,10 +150,10 @@ const config = {
             `,
             tos_en: `
                 <h3>Scope of Service</h3>
-                <p>The server, web services, and launcher infrastructure are provided by Vanguard Networks S.L. Access to the service is a privilege, not a right.</p>
+                <p>The server, web services, and launcher infrastructure are provided by LunaticMC Networks S.L. Access to the service is a privilege, not a right.</p>
                 <br>
                 <h3>Account Responsibility</h3>
-                <p>User account security is the sole responsibility of the player. VanguardMC is not liable for losses caused by account theft, password sharing, or security negligence by the user.</p>
+                <p>User account security is the sole responsibility of the player. LunaticMC is not liable for losses caused by account theft, password sharing, or security negligence by the user.</p>
                 <br>
                 <h3>Payments and Refunds</h3>
                 <p>Purchases made in the server store are considered intangible digital goods. In accordance with digital product regulations, once the service or rank is delivered, <b>no returns or refunds are accepted</b> under any circumstances. Any chargeback attempt will result in a permanent account ban.</p>
@@ -161,10 +166,10 @@ const config = {
             notice_es: `
                 <h3>Información de la Empresa</h3>
                 <ul>
-                    <li><b>Nombre Legal:</b> Vanguard Networks S.L.</li>
-                    <li><b>Dirección:</b> Calle Falsa 123, Madrid, España (Sede operativa en Estambul, Turquía)</li>
+                    <li><b>Nombre Legal:</b> LunaticMC Networks S.L.</li>
+                    <li><b>Dirección:</b> Calle Falsa 123, Mexico, MX (Sede operativa en Mexico, S.L.P.)</li>
                     <li><b>N° Fiscal:</b> ES-B12345678</li>
-                    <li><b>Contacto Legal:</b> legal@vanguardmc.net</li>
+                    <li><b>Contacto Legal:</b> legal@lunaticmc.net</li>
                 </ul>
                 <br>
                 <h3>Licencia y Derechos de Autor</h3>
@@ -175,9 +180,9 @@ const config = {
                 <h3>Company Information</h3>
                 <ul>
                     <li><b>Legal Name:</b> Vanguard Networks S.L.</li>
-                    <li><b>Address:</b> Fake Street 123, Madrid, Spain (Operational HQ in Istanbul, Turkey)</li>
+                    <li><b>Address:</b> Fake Street 123, Mexico, MX (Operational HQ in Mexico, S.L.P.)</li>
                     <li><b>Tax ID:</b> ES-B12345678</li>
-                    <li><b>Legal Contact:</b> legal@vanguardmc.net</li>
+                    <li><b>Legal Contact:</b> legal@lunaticmc.net</li>
                 </ul>
                 <br>
                 <h3>License and Copyright</h3>
@@ -238,4 +243,5 @@ const config = {
             legal_tabs: { tos: "Terms", priv: "Privacy", notice: "Legal Notice" }
         }
     }
+
 };
