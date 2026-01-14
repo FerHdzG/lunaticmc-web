@@ -1,8 +1,8 @@
 :root {
     --bg-dark: #050505;
     --bg-card: #0c0c0c;
-    --gold: #d4af37;
-    --gold-hover: #f1c40f;
+    --gold: #FF1414;
+    --gold-hover: #FF3939;
     --border: rgba(212, 175, 55, 0.2);
     --font-main: 'Inter', sans-serif;
     --font-title: 'Oswald', sans-serif;
@@ -178,4 +178,5 @@ footer { padding: 50px 20px; text-align: center; border-top: 1px solid var(--bor
     .ip-wrapper { flex-direction: column; width: 100%; }
     .legal-tabs { flex-direction: column; }
     .l-tab { border-right: none; border-bottom: 1px solid var(--border); }
+
 }
