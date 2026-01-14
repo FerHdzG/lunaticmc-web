@@ -173,7 +173,7 @@ const config = {
                 </ul>
                 <br>
                 <h3>Licencia y Derechos de Autor</h3>
-                <p>VanguardMC no está afiliado, asociado ni respaldado por Mojang Studios, Microsoft ni ninguna de sus filiales. Minecraft es una marca registrada de Mojang Studios.</p>
+                <p>LunaticMC no está afiliado, asociado ni respaldado por Mojang Studios, Microsoft ni ninguna de sus filiales. Minecraft es una marca registrada de Mojang Studios.</p>
                 <p>Todos los activos del juego, texturas y modelos base están sujetos al EULA de Minecraft. El contenido original de la web y el servidor está protegido por derechos de autor de Vanguard Networks S.L.</p>
             `,
             notice_en: `
@@ -186,7 +186,7 @@ const config = {
                 </ul>
                 <br>
                 <h3>License and Copyright</h3>
-                <p>VanguardMC is not affiliated, associated, or endorsed by Mojang Studios, Microsoft, or any of their affiliates. Minecraft is a registered trademark of Mojang Studios.</p>
+                <p>LunaticMC is not affiliated, associated, or endorsed by Mojang Studios, Microsoft, or any of their affiliates. Minecraft is a registered trademark of Mojang Studios.</p>
                 <p>All game assets, textures, and base models are subject to the Minecraft EULA. Original web and server content is copyright of Vanguard Networks S.L.</p>
             `,
 
