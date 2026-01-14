@@ -107,8 +107,8 @@ const config = {
                 q_en: "Is it Premium or Cracked?", a_en: "We are a <b>Semi-Premium</b> server. This means you can join with both official Mojang/Microsoft accounts and unofficial launchers."
             },
             { 
-                q_es: "¿Dónde puedo comprar rangos?", a_es: "Puedes visitar nuestra tienda oficial haciendo clic en el botón del carrito arriba o visitando <b>tienda.vanguard.net</b>. Aceptamos PayPal y tarjetas.",
-                q_en: "Where can I buy ranks?", a_en: "You can visit our official store by clicking the cart button above or visiting <b>store.vanguard.net</b>. We accept PayPal and cards."
+                q_es: "¿Dónde puedo comprar rangos?", a_es: "Puedes visitar nuestra tienda oficial haciendo clic en el botón del carrito arriba o visitando <b>lunaticmc.tebex.io</b>. Aceptamos PayPal y tarjetas.",
+                q_en: "Where can I buy ranks?", a_en: "You can visit our official store by clicking the cart button above or visiting <b>lunaticmc.tebex.io</b>. We accept PayPal and cards."
             },
             { 
                 q_es: "¿Cómo me postulo a Staff?", a_es: "Las postulaciones se abren mensualmente en nuestro Discord. Debes ser mayor de 16 años, tener micrófono y conocer las reglas.",
@@ -119,8 +119,8 @@ const config = {
                 q_en: "Is TPA allowed?", a_en: "Yes, in Survival mode you can use <code>/tpa [player]</code> to send a teleport request to your friends."
             },
             { 
-                q_es: "¿Cómo protejo mi casa?", a_es: "Utilizamos el sistema de protección por bloques (Pala de Oro). Simplemente haz clic en dos esquinas opuestas de tu terreno para protegerlo.",
-                q_en: "How do I protect my house?", a_en: "We use the block protection system (Golden Shovel). Simply click on two opposite corners of your land to claim it."
+                q_es: "¿Cómo protejo mi casa?", a_es: "Utilizamos el sistema de protección por bloques (menas de protección). Simplemente coloca la mena en tu terreno para protegerlo.",
+                q_en: "How do I protect my house?", a_en: "We use the block protection system (block protection). Simply click on two opposite corners of your land to claim it."
             },
             { 
                 q_es: "¿Tienen chat de voz?", a_es: "Sí, soportamos el mod <b>Simple Voice Chat</b>. No es obligatorio para jugar, pero mejora la experiencia en el servidor.",
